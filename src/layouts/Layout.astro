@@ -1,0 +1,55 @@
+---
+import '../styles/globals.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Legend Homes | Your Family\'s Weekend Sanctuary Awaits',
+  description = 'Legend Homes is a boutique real estate developer in Hyderabad offering premium holiday home plots. Discover Future Green City - your family\'s weekend sanctuary in Hyderabad\'s most trusted green corridor.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#FAF9F6" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <title>{title}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <slot />
+
+    <!-- Scroll reveal observer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>
