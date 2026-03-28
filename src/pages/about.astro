@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+import premiumLiving from '../assets/images/LH_Img2.png';
+
+// Placeholder data for the team. You can easily modify this later.
+const team = [
+  {
+    name: "Ravi Kishore",
+    position: "CEO & Founder",
+    email: "rk@legendhomes.in",
+    image: "images/RK.jpg"
+  },
+  {
+    name: "Jane Smith",
+    position: "Director of Operations",
+    email: "jane.smith@legendhomes.in",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    name: "Michael Johnson",
+    position: "Head of Project Development",
+    email: "michael.j@legendhomes.in",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    name: "Sarah Williams",
+    position: "Chief Sales Officer",
+    email: "sarah.w@legendhomes.in",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop"
+  }
+];
+---
+
+<Layout title="About Us | Legend Homes">
+  <Navigation />
+  
+  <main class="pt-20">
+    <!-- Sub-page Hero Section -->
+    <section class="relative py-20 lg:py-28 bg-[#fdfdfc] border-b border-gray-100 overflow-hidden">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">Our Heritage</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-neutral-900 mb-6">
+          Building Trust For <span class="text-[#649b38]">Over 25 Years</span>
+        </h1>
+        <p class="text-lg text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
+          At Legend Homes, we don't just develop land; we build the foundation for your family's future through uncompromising quality and 100% transparent documentation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story Section (Split Layout) -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal relative rounded-[2rem] overflow-hidden shadow-xl aspect-[4/3] group">
+            <Image src={premiumLiving} alt="Premium Modern Living" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="reveal">
+            <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">Who We Are</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-serif text-neutral-900 leading-tight mb-6">
+              Redefining <span class="text-[#649b38]">Modern Living</span>
+            </h2>
+            <p class="text-[16px] text-[#666666] font-sans leading-relaxed mb-6">
+              Legend Homes is a trusted real estate development company dedicated to redefining modern living through thoughtfully planned, sustainable, and lifestyle-driven communities. We believe a home is more than just a structure — it is a space where families grow, memories are created, and meaningful lives are built.
+            </p>
+            <p class="text-[16px] text-[#666666] font-sans leading-relaxed">
+              With a strong foundation in quality, innovation, and long-term value, we develop premium residential projects that seamlessly combine comfort, nature, and smart real estate investment opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do (3-Column Grid) -->
+    <section class="py-16 sm:py-24 bg-[#fdfdfc] border-y border-gray-100">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-3xl mx-auto mb-16">
+          <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">What We Do</span>
+          <h2 class="text-3xl sm:text-4xl font-bold font-serif text-neutral-900">Our Core Focus Areas</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="reveal bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[#f2f7ec] rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#649b38]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Community-Focused Development</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">Our projects are carefully planned to promote connectivity, well-being, and a high quality of life through open spaces, green landscapes, and modern infrastructure.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="reveal bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:shadow-md transition-shadow delay-100">
+            <div class="w-12 h-12 bg-[#fffaf5] rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#f19014]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Balanced Living & Investment</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">We design residential projects that offer both lifestyle comfort and strong investment potential, catering to families and investors looking for high-growth opportunities.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="reveal bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:shadow-md transition-shadow delay-200">
+            <div class="w-12 h-12 bg-[#f2f7ec] rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#649b38]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Quality & Transparency</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">From planning to execution, we uphold the highest standards of construction quality and ethical business practices, ensuring trust and satisfaction at every stage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Team Section -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-3xl mx-auto mb-16">
+          <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">Leadership</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-serif text-neutral-900 leading-tight">The Team Behind <span class="text-[#649b38]">Legend Homes</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {team.map((member, index) => (
+            <div class="reveal group" style={`transition-delay: ${index * 100}ms`}>
+              <div class="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6 bg-stone-100 shadow-sm border border-[#f4f5f0]">
+                <img src={member.image} alt={member.name} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div class="text-center">
+                <h3 class="text-xl font-bold font-serif text-neutral-900 mb-1">{member.name}</h3>
+                <p class="text-sm text-[#f19014] font-semibold mb-3">{member.position}</p>
+                <a href={`mailto:${member.email}`} class="inline-flex items-center gap-2 text-[13px] text-neutral-500 hover:text-[#649b38] transition-colors">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  {member.email}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

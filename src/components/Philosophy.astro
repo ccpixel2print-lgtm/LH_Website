@@ -1,89 +1,77 @@
 ---
+const features = [
+  {
+    title: "100% Clear Titles",
+    description: "Every plot comes with legally verified, dispute-free documentation. Complete peace of mind for your family's future.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />`
+  },
+  {
+    title: "Middle-Class Accessible",
+    description: "Premium land ownership designed for families like yours. Thoughtfully priced with flexible plans that make your dream achievable.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />`
+  },
+  {
+    title: "Uncompromising Quality",
+    description: "From infrastructure to green spaces, every detail is crafted to exceed expectations. Quality you can see and feel.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />` // Using a structure/quality icon as a fallback, Astro will render the exact SVG path here.
+  },
+  {
+    title: "Smart Investment Opportunities",
+    description: "With strategic locations, rapid development plans, and market-aligned pricing, Legend Homes provides investors a chance to grow their wealth.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`
+  }
+];
+
+// Leaf Icon specifically for the third card to match the design exactly
+const leafIconPath = `<path stroke-linecap="round" stroke-linejoin="round" d="M11.412 15.655L9.75 21m2.435-8.153a5.25 5.25 0 00-7.142-7.142c-1.378 1.378-2.126 3.42-2.052 5.565a5.25 5.25 0 005.564 5.565c2.146.074 4.188-.674 5.566-2.052z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75l-4.5 4.5" />`;
+features[2].icon = leafIconPath;
 ---
 
-<section id="philosophy" class="py-24 sm:py-32 bg-alabaster">
-  <div class="section-padding max-w-7xl mx-auto">
+<section id="why-choose-us" class="py-24 bg-white">
+  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+    
     <!-- Section Header -->
-    <div class="reveal max-w-3xl mx-auto text-center mb-20">
-      <span class="inline-block text-leaf-500 text-sm font-sans font-semibold tracking-widest uppercase mb-4">Our Philosophy</span>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight text-balance">
-        A Symbol of <span class="text-leaf-600">Authenticity.</span>
+    <div class="reveal text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">
+        Why Choose Legend Homes
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-serif text-neutral-900 leading-tight mb-5">
+        Peaceful Living <span class="text-[#649b38]">In Natural Surroundings</span>
       </h2>
-      <p class="mt-6 text-lg text-neutral-500 font-sans leading-relaxed text-pretty max-w-2xl mx-auto">
-        At Legend Homes, we believe that owning land should be a source of pride, not anxiety. Every plot we offer comes with complete transparency, legally clear titles, and the assurance that your investment is built on a foundation of trust.
+      <p class="text-[17px] text-[#666666] font-sans leading-relaxed">
+        Experience a lifestyle where modern living blends seamlessly with natural surroundings.
       </p>
     </div>
 
-    <!-- Image + Quote -->
-    <div class="reveal grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
-      <div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl">
-        <img
-          src="/images/family-nature.jpg"
-          alt="Family enjoying nature at a holiday home community"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-      </div>
-      <div>
-        <blockquote class="border-l-4 border-leaf-500 pl-6 py-2">
-          <p class="font-serif text-2xl sm:text-3xl text-neutral-800 leading-snug italic text-pretty">
-            "We don't just sell plots. We earn trust, one family at a time."
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      {features.map((feature, index) => (
+        <div 
+          class="reveal flex flex-col items-center text-center p-8 sm:p-10 rounded-[1.5rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-[#f4f5f0]"
+          style={`background: linear-gradient(to bottom, #fcfcfb, #ffffff); transition-delay: ${index * 0.1}s; box-shadow: 0 4px 20px -2px rgba(0,0,0,0.03);`}
+        >
+          <!-- Icon Container -->
+          <div class="w-[60px] h-[60px] rounded-full bg-[#f2f7ec] flex items-center justify-center mb-8 border border-[#e8f0df]">
+            <svg 
+              class="w-7 h-7 text-[#649b38]" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor" 
+              stroke-width="1.5"
+              set:html={feature.icon}
+            />
+          </div>
+
+          <!-- Text Content -->
+          <h3 class="text-xl font-bold text-neutral-800 mb-4 font-sans">
+            {feature.title}
+          </h3>
+          <p class="text-[14px] text-[#737373] leading-[1.7] font-sans">
+            {feature.description}
           </p>
-        </blockquote>
-        <p class="mt-8 text-neutral-500 font-sans leading-relaxed text-pretty">
-          Our commitment goes beyond transactions. We prioritize high-quality materials, a value-based approach, and earning customer trust above all else. Every decision we make is guided by the belief that middle-class families deserve access to premium, worry-free land ownership.
-        </p>
-        <a href="#flagship" class="inline-flex items-center gap-2 mt-8 text-sunset-500 font-sans font-semibold hover:text-sunset-600 transition-colors group">
-          Explore Our Flagship Project
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
+        </div>
+      ))}
     </div>
 
-    <!-- 3-Column Features -->
-    <div class="grid sm:grid-cols-3 gap-8 lg:gap-12">
-      <!-- Feature 1: Clear Titles -->
-      <div class="reveal group text-center p-8 rounded-2xl bg-white border border-neutral-100 shadow-sm hover:shadow-md hover:border-neutral-200 transition-all duration-300">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-leaf-50 text-leaf-600 mb-6 group-hover:scale-105 transition-transform">
-          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-          </svg>
-        </div>
-        <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">100% Clear Titles</h3>
-        <p class="text-neutral-500 font-sans text-sm leading-relaxed">
-          Every plot comes with legally verified, dispute-free documentation. Complete peace of mind for your family's future.
-        </p>
-      </div>
-
-      <!-- Feature 2: Middle-Class Accessibility -->
-      <div class="reveal group text-center p-8 rounded-2xl bg-white border border-neutral-100 shadow-sm hover:shadow-md hover:border-neutral-200 transition-all duration-300" style="transition-delay: 0.1s;">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-leaf-50 text-leaf-600 mb-6 group-hover:scale-105 transition-transform">
-          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-          </svg>
-        </div>
-        <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Middle-Class Accessible</h3>
-        <p class="text-neutral-500 font-sans text-sm leading-relaxed">
-          Premium land ownership designed for families like yours. Thoughtfully priced with flexible plans that make your dream achievable.
-        </p>
-      </div>
-
-      <!-- Feature 3: Uncompromising Quality -->
-      <div class="reveal group text-center p-8 rounded-2xl bg-white border border-neutral-100 shadow-sm hover:shadow-md hover:border-neutral-200 transition-all duration-300" style="transition-delay: 0.2s;">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-leaf-50 text-leaf-600 mb-6 group-hover:scale-105 transition-transform">
-          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
-          </svg>
-        </div>
-        <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Uncompromising Quality</h3>
-        <p class="text-neutral-500 font-sans text-sm leading-relaxed">
-          From infrastructure to green spaces, every detail is crafted to exceed expectations. Quality you can see and feel.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
