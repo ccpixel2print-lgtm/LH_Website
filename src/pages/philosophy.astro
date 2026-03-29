@@ -9,25 +9,114 @@ import Footer from '../components/Footer.astro';
   
   <main class="pt-20">
     <!-- Sub-page Hero Section -->
-    <section class="relative py-20 lg:py-28 bg-[#fdfdfc] border-b border-gray-100">
+    <section class="relative py-20 lg:py-28 bg-[#fdfdfc] border-b border-gray-100 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+         <div class="absolute -top-24 -right-24 w-96 h-96 bg-green-50 rounded-full blur-3xl opacity-50"></div>
+         <div class="absolute top-1/2 -left-24 w-72 h-72 bg-orange-50 rounded-full blur-3xl opacity-50"></div>
+      </div>
       <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">Core Values</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-neutral-900 mb-6">
           Our <span class="text-[#649b38]">Philosophy</span>
         </h1>
-        <p class="text-lg text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed text-balance">
           Driven by a value-based and trust-based approach, we prioritize high-quality materials, clear titles, and long-term relationships with our clients.
         </p>
       </div>
     </section>
 
-    <!-- Placeholder for Philosophy Details -->
-    <section class="py-24 bg-white">
-      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-         <h2 class="text-2xl font-serif text-neutral-800 mb-4">Why We Do What We Do</h2>
-         <p class="text-neutral-500 italic">We will design the detailed mission, vision, and deep-dive into the trust-based approach here.</p>
+    <!-- The Legend Homes Difference (Split Section) -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal">
+            <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">The Legend Homes Difference</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold font-serif text-neutral-900 leading-tight mb-6">
+              Homes You Can Trust & <span class="text-[#649b38]">Be Proud to Own</span>
+            </h2>
+            <div class="space-y-6 text-[16px] text-[#666666] font-sans leading-relaxed">
+              <p>
+                At Legend Homes, we offer thoughtfully designed living spaces that combine modern aesthetics with practical layouts, ensuring comfort and functionality in every home. 
+              </p>
+              <p>
+                Our commitment to superior construction quality, use of premium materials, and proven building practices ensures long-lasting durability and safety for your family's future.
+              </p>
+              <p>
+                With transparent processes, clear communication, and honest pricing, we make the home-buying journey smooth and stress-free. Backed by end-to-end customer support and a focus on responsible, sustainable building, we deliver strong value and long-term appreciation.
+              </p>
+            </div>
+          </div>
+          <div class="reveal relative rounded-[2rem] overflow-hidden shadow-xl aspect-[4/5] group lg:ml-8">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Thoughtfully Designed Living Spaces" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8 right-8 border-l-4 border-[#f19014] pl-6 py-2">
+              <p class="text-white font-serif text-xl italic leading-snug">"Building not just structures, but the foundation for your family's memories."</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Core Pillars Grid -->
+    <section class="py-16 sm:py-24 bg-[#fdfdfc] border-t border-gray-100">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center max-w-3xl mx-auto mb-16">
+          <span class="inline-block text-[#f19014] text-xs font-bold tracking-[0.15em] uppercase mb-4">Our Foundation</span>
+          <h2 class="text-3xl sm:text-4xl font-bold font-serif text-neutral-900">The 5 Pillars of Our Philosophy</h2>
+        </div>
+
+        <!-- FIXED: Switched to a Flexbox layout with calculated widths to perfectly center an odd number of items -->
+        <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="reveal w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#649b38]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Thoughtful Design</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">Living spaces that seamlessly combine modern aesthetics with highly practical layouts, ensuring ultimate comfort and functionality.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="reveal w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:-translate-y-1 transition-transform duration-300 delay-100">
+            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#f19014]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Superior Quality</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">An unwavering commitment to premium materials and proven building practices, guaranteeing long-lasting durability and safety.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="reveal w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:-translate-y-1 transition-transform duration-300 delay-200">
+            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#649b38]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Complete Transparency</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">Honest pricing, 100% clear documentation, and transparent communication to make your investment journey entirely stress-free.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="reveal w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#f19014]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Strategic Locations</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">Carefully selected sites that guarantee excellent connectivity, lifestyle convenience, and unparalleled long-term appreciation.</p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="reveal w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.35rem)] bg-white p-8 rounded-[1.5rem] shadow-sm border border-[#f4f5f0] hover:-translate-y-1 transition-transform duration-300 delay-100">
+            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#649b38]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold font-serif text-neutral-900 mb-3">Customer-Centric Sustainability</h3>
+            <p class="text-sm text-[#666666] leading-relaxed">Backed by end-to-end customer support and an unwavering focus on responsible, eco-friendly building practices.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
   
   <Footer />
