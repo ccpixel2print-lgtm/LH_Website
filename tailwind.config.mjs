@@ -5,29 +5,31 @@ export default {
     extend: {
       colors: {
         alabaster: '#FAF9F6',
+        // Recalibrated to match the new vibrant orange theme (#F7931E)
         sunset: {
-          50: '#FFF7ED',
-          100: '#FFEDD5',
-          200: '#FED7AA',
-          300: '#FDBA74',
-          400: '#FB923C',
-          500: '#E8891C',
-          600: '#D97706',
-          700: '#B45309',
-          800: '#92400E',
-          900: '#78350F',
+          50: '#fef8f0',
+          100: '#fdedda',
+          200: '#fbd4aa',
+          300: '#f8b671',
+          400: '#f59635',
+          500: '#F7931E', // Main Theme Orange
+          600: '#e1780d',
+          700: '#bc5c0e',
+          800: '#954812',
+          900: '#783c12',
         },
+        // Recalibrated to match the new vibrant nature green theme (#8CC63F)
         leaf: {
-          50: '#F0FDF4',
-          100: '#DCFCE7',
-          200: '#BBF7D0',
-          300: '#86EFAC',
-          400: '#4ADE80',
-          500: '#4A8C2A',
-          600: '#3D7A22',
-          700: '#30681A',
-          800: '#245612',
-          900: '#18440A',
+          50: '#f4f8f1',
+          100: '#e5efe0',
+          200: '#ccdfbf',
+          300: '#a8c994',
+          400: '#81ad66',
+          500: '#8CC63F', // Main Theme Green
+          600: '#4e7e29',
+          700: '#3d6323',
+          800: '#345021',
+          900: '#2b421e',
         },
       },
       fontFamily: {

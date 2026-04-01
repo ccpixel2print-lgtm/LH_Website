@@ -1,4 +1,7 @@
 ---
+// Get the current path and remove any trailing slashes for accurate matching
+const pathname = Astro.url.pathname;
+const currentPath = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
 ---
 
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/85 backdrop-blur-md shadow-sm border-b border-gray-200/50">
@@ -11,16 +14,32 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-10">
-        <a href="/" class="text-sm font-semibold tracking-wide text-neutral-800 hover:text-orange-500 transition-colors duration-200">Home</a>
-        <a href="/about" class="text-sm font-semibold tracking-wide text-neutral-800 hover:text-orange-500 transition-colors duration-200">About Us</a>
-        <a href="/fortune-green-city" class="text-sm font-semibold tracking-wide text-neutral-800 hover:text-orange-500 transition-colors duration-200">Fortune Green City</a>
-        <a href="/philosophy" class="text-sm font-semibold tracking-wide text-neutral-800 hover:text-orange-500 transition-colors duration-200">Our Philosophy</a>
-        <a href="/#contact" class="text-sm font-semibold tracking-wide text-neutral-800 hover:text-orange-500 transition-colors duration-200">Contact Us</a>
+        <a href="/" class:list={[
+          "text-sm font-semibold tracking-wide transition-colors duration-200",
+          currentPath === "" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+        ]}>Home</a>
+        
+        <a href="/about" class:list={[
+          "text-sm font-semibold tracking-wide transition-colors duration-200",
+          currentPath === "/about" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+        ]}>About Us</a>
+        
+        <a href="/fortune-green-city" class:list={[
+          "text-sm font-semibold tracking-wide transition-colors duration-200",
+          currentPath === "/fortune-green-city" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+        ]}>Fortune Green City</a>
+        
+        <a href="/philosophy" class:list={[
+          "text-sm font-semibold tracking-wide transition-colors duration-200",
+          currentPath === "/philosophy" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+        ]}>Our Philosophy</a>
+        
+        <a href="/#contact" class="text-sm font-semibold tracking-wide text-neutral-800 hover:text-[#F7931E] transition-colors duration-200">Contact Us</a>
       </div>
 
       <!-- Desktop CTA -->
       <div class="hidden lg:block">
-        <a href="/#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors duration-300 shadow-md">Schedule Site Visit</a>
+        <a href="/#contact" class="bg-[#F7931E] hover:opacity-90 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md">Schedule Site Visit</a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -40,15 +59,32 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl hidden pt-24">
-    <div class="flex flex-col items-center justify-start h-full gap-8">
-      <a href="/" class="mobile-link text-xl font-medium text-neutral-800 hover:text-orange-500 transition-colors">Home</a>
-      <a href="/about" class="mobile-link text-xl font-medium text-neutral-800 hover:text-orange-500 transition-colors">About Us</a>
-      <a href="/fortune-green-city" class="mobile-link text-xl font-medium text-neutral-800 hover:text-orange-500 transition-colors">Fortune Green City</a>
-      <a href="/philosophy" class="mobile-link text-xl font-medium text-neutral-800 hover:text-orange-500 transition-colors">Our Philosophy</a>
-      <a href="/#contact" class="mobile-link text-xl font-medium text-neutral-800 hover:text-orange-500 transition-colors">Contact Us</a>
+  <div id="mobile-menu" class="lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-100 hidden pb-6">
+    <div class="flex flex-col px-6 pt-4 gap-4">
+      <a href="/" class:list={[
+        "mobile-link block py-3 text-lg font-medium transition-colors border-b border-gray-50",
+        currentPath === "" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+      ]}>Home</a>
+      
+      <a href="/about" class:list={[
+        "mobile-link block py-3 text-lg font-medium transition-colors border-b border-gray-50",
+        currentPath === "/about" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+      ]}>About Us</a>
+      
+      <a href="/fortune-green-city" class:list={[
+        "mobile-link block py-3 text-lg font-medium transition-colors border-b border-gray-50",
+        currentPath === "/fortune-green-city" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+      ]}>Fortune Green City</a>
+      
+      <a href="/philosophy" class:list={[
+        "mobile-link block py-3 text-lg font-medium transition-colors border-b border-gray-50",
+        currentPath === "/philosophy" ? "text-[#F7931E]" : "text-neutral-800 hover:text-[#F7931E]"
+      ]}>Our Philosophy</a>
+      
+      <a href="/#contact" class="mobile-link block py-3 text-lg font-medium text-neutral-800 hover:text-[#F7931E] transition-colors border-b border-gray-50">Contact Us</a>
+      
       <div class="pt-4">
-        <a href="/#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-md mobile-link">Schedule Site Visit</a>
+        <a href="/#contact" class="block text-center bg-[#F7931E] hover:opacity-90 text-white px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 shadow-md mobile-link">Schedule Site Visit</a>
       </div>
     </div>
   </div>
@@ -68,7 +104,6 @@
     mobileMenu?.classList.toggle('hidden', !menuOpen);
     openIcon?.classList.toggle('hidden', menuOpen);
     closeIcon?.classList.toggle('hidden', !menuOpen);
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
   });
 
   // Close mobile menu on link click
@@ -78,7 +113,6 @@
       mobileMenu?.classList.add('hidden');
       openIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
-      document.body.style.overflow = '';
     });
   });
 </script>
