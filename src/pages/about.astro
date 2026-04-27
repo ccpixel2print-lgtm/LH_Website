@@ -9,30 +9,41 @@ import premiumLiving from '../assets/images/LH_Img2.png';
 // Placeholder data for the team. You can easily modify this later.
 const team = [
   {
-    name: "Ravi Kishore",
+    name: "Mr. Ravi Kishore",
     position: "CEO & Founder",
     email: "rk@legendhomes.in",
-    image: "/images/rk.jpg"
+    image: "/images/rk.jpeg"
   },
   {
-    name: "Jane Smith",
-    position: "Director of Operations",
-    email: "jane.smith@legendhomes.in",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+    name: "Mr Kiran Kumar G",
+    position: "Director - Sales",
+    email: "kiran@legendhomes.in",
+    image: "/images/kiran.jpeg"
   },
   {
-    name: "Michael Johnson",
-    position: "Head of Project Development",
-    email: "michael.j@legendhomes.in",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+    name: "Mr Prabhakar",
+    position: "Sales and Operations - Director",
+    email: "prabhakar@legendhomes.in",
+    image: "/images/prabhakar.png"
   },
   {
-    name: "Sarah Williams",
-    position: "Chief Sales Officer",
-    email: "sarah.w@legendhomes.in",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop"
+    name: "Mr Venkatesh M",
+    position: "Product Manager",
+    email: "venkatesh@legendhomes.in",
+    image: "/images/venkatesh.jpeg"
+  },
+  // 5th Team Member Placeholder
+  {
+    name: "Mr Venkataswamy K",
+    position: "Operations Head",
+    email: "venkatesh@legendhomes.in",
+    image: ""
   }
 ];
+
+// Separate the CEO from the rest of the team for the new layout
+const ceo = team[0];
+const otherMembers = team.slice(1);
 ---
 
 <Layout title="About Us | Legend Homes">
@@ -115,22 +126,45 @@ const team = [
 
     <!-- The Team Section -->
     <section class="py-16 sm:py-24 bg-white">
-      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="reveal text-center max-w-3xl mx-auto mb-16">
           <span class="inline-block text-sunset-500 text-xs font-bold tracking-[0.15em] uppercase mb-4">Leadership</span>
           <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-serif text-neutral-900 leading-tight">The Team Behind <span class="text-leaf-500">Legend Homes</span></h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member, index) => (
+        <!-- CEO Prominent Layout -->
+        <div class="reveal max-w-5xl mx-auto mb-16 bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-stone-200/50 border border-gray-100 group">
+          <div class="grid md:grid-cols-5 items-stretch">
+            <div class="relative md:col-span-2 aspect-square md:aspect-auto">
+              <!-- FIXED: Added 'object-top' to ensure head and face are preserved -->
+              <img src={ceo.image} alt={ceo.name} class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div class="md:col-span-3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left bg-stone-50/50">
+              <h3 class="text-3xl sm:text-4xl font-bold font-serif text-neutral-900 mb-2">{ceo.name}</h3>
+              <p class="text-lg text-sunset-500 font-bold tracking-wide uppercase mb-6">{ceo.position}</p>
+              <p class="text-neutral-600 leading-relaxed font-sans mb-8 italic">
+                "Our mission is to redefine modern living by creating communities that exist in harmony with nature while providing outstanding investment value for our clients. Transparency and trust are the cornerstones of everything we build."
+              </p>
+              <a href={`mailto:${ceo.email}`} class="inline-flex items-center justify-center md:justify-start gap-2 text-[15px] font-medium text-neutral-500 hover:text-leaf-500 transition-colors w-fit md:mx-0 mx-auto">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                {ceo.email}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Remaining Team (4 Columns) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {otherMembers.map((member, index) => (
             <div class="reveal group" style={`transition-delay: ${index * 100}ms`}>
               <div class="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden mb-6 bg-stone-100 shadow-sm border border-[#f4f5f0]">
-                <img src={member.image} alt={member.name} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <!-- FIXED: Added 'object-top' here as well -->
+                <img src={member.image} alt={member.name} class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div class="text-center">
                 <h3 class="text-xl font-bold font-serif text-neutral-900 mb-1">{member.name}</h3>
                 <p class="text-sm text-sunset-500 font-semibold mb-3">{member.position}</p>
-                <a href={`mailto:${member.email}`} class="inline-flex items-center gap-2 text-[13px] text-neutral-500 hover:text-leaf-500 transition-colors">
+                <a href={`mailto:${member.email}`} class="inline-flex items-center gap-2 text-[13px] text-neutral-500 hover:text-leaf-500 transition-colors justify-center">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                   {member.email}
                 </a>
